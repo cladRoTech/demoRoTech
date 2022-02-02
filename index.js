@@ -66,6 +66,7 @@ app.get('/', (req, res) => res.send('Hello World with Express'));
 app.use('/api', carRoutes);
 app.use('/api', parkingRoutes);
 // Launch app to listen to specified port
-app.listen(port, function () {
+app.listen(port,function () {
+    console.log("LISTENING ON PORT --->", port)
     console.log("\x1b[7m", "APPLICATION STARTED SUCCESSFULLY");
 });
