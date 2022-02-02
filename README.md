@@ -10,6 +10,12 @@ To run the application make sure that:
 - an instance of **mongodb-community** is running locally on port **27017** 
 - port **8080** on localhost is not used
 
+To intialize MongoDB we are going to run the ***mgodatagen*** script, with the following command:
+```bash
+./utility/mgodatagen -f feedMongo.json
+```
+This command will run the script by sourcing the json-schema form the ***feedMongo.json*** file.
+
 In the folder **utility** is hosted the **connections** file that is exporting the mongodb address and db to be used.
 
 ## Application Startup
