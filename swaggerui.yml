@@ -1,0 +1,358 @@
+swagger: "2.0"
+info:
+  description: "Car dealership simple APIs to test automation"
+  version: "1.0.0"
+  title: "DemoRoTech"
+host: "localhost:8080"
+basePath: "/api"
+tags:
+- name: "cars"
+  description: "Car Details"
+- name: "parkingLot"
+  description: "if a car is in stock, parking info will be available"
+schemes:
+- "http"
+paths:
+  /cars/addNewCar:
+    post:
+      tags:
+      - "cars"
+      summary: "Add a new car to the 'cars' collection and create an entry in the 'parkingLot' collection" 
+      description: ""
+      operationId: "addNewCar"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Car object that needs to be added to the store"
+        required: true
+        schema:
+          $ref: "#/definitions/AddNewCar"
+      responses:
+        200:
+          description: Successful Insert
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: "DOCUMENT UPDATED"
+        400:
+          description: Bad Request - carId | transmissionType | inStock
+          schema:
+            type: object
+            properties:
+              status: 
+                type: string
+                example: "400"
+              content:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "ValidationError: carId: Cast to Number failed for value \"null\" at path \"carId\""
+
+
+  /cars/getCarDetails:
+    post:
+      tags:
+      - "cars"
+      summary: "getCarDetails by carId"
+      description: ""
+      operationId: "getCarDetails"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Car object that needs to be added to the store"
+        required: true
+        schema:
+          $ref: "#/definitions/GetCarDetails"
+      responses:
+        200:
+          description: Successful Retrieve
+          schema:
+            $ref: "#/definitions/AddNewCar"
+        404:
+          description: Unsuccessful Retrieve
+          schema:
+            type: object
+            properties:
+              status: 
+                type: string
+                example: "404"
+              content:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "The requested car is not in the DB"
+
+  /cars/updateInStock:
+    post:
+      tags:
+      - "cars"
+      summary: "update the inStock status on a car, if inStock is sent as true, an entry in the parkingLot collection will be added. If sent as false, the entry will be removed."
+      operationId: "updateInStock"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "CarId and status to be updated in the db"
+        required: true
+        schema:
+          $ref: "#/definitions/UpdateInStock"
+      responses:
+        200:
+          description: Successful Insert
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: "DOCUMENT UPDATED AND INSERTED IN PARKINGLOT"
+        400:
+          description: Bad Request - inStock
+          schema:
+            type: object
+            properties:
+              status: 
+                type: string
+                example: "400"
+              content:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "CastError: Cast to Boolean failed for value \"test\" at path \"inStock\""
+              
+  /cars/updateTransmissionType:
+    post:
+      tags:
+      - "cars"
+      summary: "update the transmissionType of a car"
+      operationId: "updateTransmissionType"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "CarId and transmissionType to be updated in the db"
+        required: true
+        schema:
+          $ref: "#/definitions/UpdateTransmissionType"
+      responses:
+        200:
+          description: Successful Insert
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: "DOCUMENT UPDATED"
+        400:
+          description: Bad Request - inStock
+          schema:
+            type: object
+            properties:
+              status: 
+                type: string
+                example: "400"
+              content:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "ValidationError: transmissionType: Validator failed for path `transmissionType` with value `notValue`"
+
+  /park/getCar:
+    post:
+      tags:
+      - "parkingLot"
+      summary: "retrieve details on where and when the car was parked" 
+      description: ""
+      operationId: "getCar"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "CarId ref to retrieve"
+        required: true
+        schema:
+          $ref: "#/definitions/GetCarDetails"
+      responses:
+        200:
+          description: Successful Retrieve
+          schema:
+            type: array
+            items:
+                $ref: "#/definitions/GetCarParking"
+        400:
+          description: Bad Request - carId 
+          schema:
+            type: object
+            properties:
+              status: 
+                type: string
+                example: "400"
+              content:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "CastError: Cast to Number failed for value \"1001$$\" at path \"carId\" for model \"Park\""
+        404:
+          description: Unsuccessful Retrieve
+          schema:
+            type: object
+            properties:
+              status: 
+                type: string
+                example: "404"
+              content:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "The requested car is not in the DB"
+
+  /park/updateParkingSection:
+    post:
+      tags:
+      - "parkingLot"
+      summary: "update the parking section of a parked car"
+      operationId: "updateParkingSection"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "CarId and parking section to be updated in the db"
+        required: true
+        schema:
+          $ref: "#/definitions/UpdateParkingSection"
+      responses:
+        200:
+          description: Successful Insert
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: "DOCUMENT UPDATED"
+        400:
+          description: Bad Request - section
+          schema:
+            type: object
+            properties:
+              status: 
+                type: string
+                example: "400"
+              content:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "ValidationError: section: section parking cannot be null"
+
+definitions:
+  AddNewCar:
+    type: "object"
+    required:
+    - "carId"
+    properties:
+      carId:
+        type: "string"
+        example: "1111"
+      carModel:
+        type: "string"
+        example: "Audi A1"
+      transmissionType:
+        type: "string"
+        enum: 
+        - "Automatic"
+        - "Manual"
+        example : "Automatic"
+      inStock:
+        type: "boolean"
+      releasedDate:
+        type: "string"
+        example: "2022-01-24T17:00:08.961Z"
+      delearCity:
+        type: "string"
+        example: "Roma"
+        
+  GetCarDetails:
+    type: "object"
+    required:
+    - "carId"
+    properties:
+      carId:
+        type: "string"
+        example: "1111"
+  UpdateInStock:
+    type: "object"
+    required:
+    - "carId"
+    properties:
+      carId:
+        type: "string"
+        example: "1111"
+      inStock:
+        type: boolean
+
+  UpdateTransmissionType:
+    type: "object"
+    required:
+    - "carId"
+    properties:
+      carId:
+        type: "string"
+        example: "1111"
+      transmissionType:
+        type: "string"
+        enum:
+        - "Automatic"
+        - "Manual"
+  GetCarParking:
+    type: "object"
+    required:
+    - "carId"
+    properties:
+      carId:
+        type: "string"
+        example: "1111"
+      section:
+        type: "string"
+        example: "9c"
+      parkedDate:
+        type: "string"
+        example: "2022-01-24T17:00:08.961Z"
+  UpdateParkingSection:
+    type: "object"
+    required:
+    - "carId"
+    properties:
+      carId:
+        type: "string"
+        example: "1111"
+      section:
+        type: "string"
+        example: "9c"
+    

@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"test\/updateInStock[1:16]","start":1643360900319,"end":1643360900740,"title":"test\/updateInStock[1:16] 10:08:20.319-10:08:20.740 Create a new \"car\" Document in the DB with inStock false","className":"failed"},{"id":2,"group":1,"content":"test\/updateInStock[2:23]","start":1643360900747,"end":1643360900754,"title":"test\/updateInStock[2:23] 10:08:20.747-10:08:20.754 Get Car by carId and assert is not in stock","className":"failed"},{"id":3,"group":1,"content":"test\/updateInStock[3:30]","start":1643360900760,"end":1643360900767,"title":"test\/updateInStock[3:30] 10:08:20.760-10:08:20.767 Set the car as with inStock true","className":"failed"},{"id":4,"group":1,"content":"test\/updateInStock[4:37]","start":1643360900773,"end":1643360900777,"title":"test\/updateInStock[4:37] 10:08:20.773-10:08:20.777 Check that the car is now inStock","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

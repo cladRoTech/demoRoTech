@@ -1,0 +1,80 @@
+[
+  {
+    "database": "test",
+    "collection": "cars",
+    "count": 1,
+    "content": {
+      "_id": {
+        "type": "ref",
+        "id": 1,
+        "refContent": {
+          "type": "objectId"
+        }
+      },
+      "releaseDate": {
+        "type": "date",
+        "startDate": "2010-01-10T00:00:00+00:00",
+        "endDate": "2017-01-01T22:00:00+00:00"
+      },
+      "carModel": {
+        "type": "faker",
+        "method" : "CarModel"
+      },
+      "dealerCity": {
+        "type" : "faker",
+        "method" : "City"
+      },
+      "inStock": {
+        "type": "boolean"
+      },
+      "transmissionType": {
+        "type": "faker",
+        "method" : "CarTransmissionType"
+      },
+      "carId": {
+        "type": "autoincrement",
+        "autoType": "long",
+        "startLong": 1000
+      }
+    },
+    "indexes" : [{
+      "name" : "carId",
+      "key": {"carId" : 1},
+      "unique" : true
+    }
+    ]
+  },
+  {
+    "database": "test",
+    "collection": "parkingLot",
+    "count": 1,
+    "content": {
+      "_id": {
+        "type": "ref",
+        "id": 1,
+        "refContent": {
+          "type": "objectId"
+        }
+      },
+      "parkedDate": {
+        "type": "date",
+        "startDate": "2010-01-10T00:00:00+00:00",
+        "endDate": "2017-01-01T22:00:00+00:00"
+      },
+      "carId": {
+        "type": "autoincrement",
+        "autoType": "long",
+        "startLong": 1000
+      },
+      "section" : {
+        "type" : "string"
+      }
+    },
+    "indexes" : [{
+      "name" : "carId",
+      "key": {"carId" : 1},
+      "unique" : true
+    }
+    ]
+  }
+]
