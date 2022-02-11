@@ -2,8 +2,9 @@
 node_modules/
 
 # Ignore Logs
-target/
+target/karate-reports
 karate.log
+/target
 
 # Ignore the build directory
 ngrok
