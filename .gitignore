@@ -1,10 +1,8 @@
 # Ignore the node_modules directory
 node_modules/
-
+.DS_Store
 # Ignore Logs
-target/karate-reports
-karate.log
-/target
+target/
 
 # Ignore the build directory
 ngrok
