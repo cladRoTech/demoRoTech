@@ -1,0 +1,17 @@
+# Ignore the node_modules directory
+node_modules/
+
+# Ignore Logs
+target/
+karate.log
+
+# Ignore the build directory
+ngrok
+
+# The file containing environment variables 
+.env
+
+# Ignore IDE specific files
+.idea/
+.vscode/
+*.sw*

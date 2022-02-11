@@ -30,7 +30,7 @@
     <div>Scenarios</div>
   </div>         
   <div id="nav-date">
-    <div>2022-01-28 03:26:17 PM</div>
+    <div>2022-02-11 09:15:23 AM</div>
   </div>        
 </div>
 
@@ -71,7 +71,7 @@
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>738</span>
+              <span>ms:</span>&nbsp;<span>439</span>
             </div>
           </div>
           <div class="step-row">
@@ -94,7 +94,7 @@
         <span>*</span>&nbsp;<span>def carId = 1001</span>
       </div>
     </div>
-    <div class="time-cell passed">108</div>
+    <div class="time-cell passed">59</div>
   </div>
 
    
@@ -150,7 +150,7 @@
         <span>And</span>&nbsp;<span>request {&quot;dealerCity&quot;: &quot;Izaiahfort&quot;,&quot;carModel&quot;: &quot;AUDI A1&quot;,&quot;releaseDate&quot;: &quot;2022-01-28T08:45:36.248Z&quot;,&quot;carId&quot;: &#39;#(carId)&#39;,&quot;transmissionType&quot;: &quot;Automatic&quot;,&quot;inStock&quot;: false}</span>
       </div>
     </div>
-    <div class="time-cell passed">62</div>
+    <div class="time-cell passed">38</div>
   </div>
 
    
@@ -178,7 +178,7 @@
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">536</div>
+    <div class="time-cell passed">320</div>
   </div>
 
    
@@ -187,7 +187,7 @@
 
   
 
-  <div class="preformatted" data-parent="0.19">15:26:17.449 request:
+  <div class="preformatted" data-parent="0.19">09:15:23.780 request:
 1 &gt; POST http://localhost:8080/api/cars/addNewCar
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 149
@@ -197,13 +197,13 @@
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;dealerCity&quot;:&quot;Izaiahfort&quot;,&quot;carModel&quot;:&quot;AUDI A1&quot;,&quot;releaseDate&quot;:&quot;2022-01-28T08:45:36.248Z&quot;,&quot;carId&quot;:1001,&quot;transmissionType&quot;:&quot;Automatic&quot;,&quot;inStock&quot;:false}
 
-15:26:17.578 response time in milliseconds: 126
+09:15:23.860 response time in milliseconds: 78
 1 &lt; 200
 1 &lt; X-Powered-By: Express
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Content-Length: 30
 1 &lt; ETag: W/&quot;1e-WcaHIX7ITaQofiXhwErGwpivfZs&quot;
-1 &lt; Date: Fri, 28 Jan 2022 14:26:17 GMT
+1 &lt; Date: Fri, 11 Feb 2022 08:15:23 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
 {&quot;message&quot;:&quot;DOCUMENT UPDATED&quot;}
@@ -255,7 +255,7 @@
         <span>And</span>&nbsp;<span>match $ contains {&quot;message&quot; : &quot;DOCUMENT UPDATED&quot;}</span>
       </div>
     </div>
-    <div class="time-cell passed">30</div>
+    <div class="time-cell passed">21</div>
   </div>
 
    
@@ -284,7 +284,7 @@
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>19</span>
+              <span>ms:</span>&nbsp;<span>42</span>
             </div>
           </div>
           <div class="step-row">
@@ -391,7 +391,7 @@
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">16</div>
+    <div class="time-cell passed">40</div>
   </div>
 
    
@@ -400,7 +400,7 @@
 
   
 
-  <div class="preformatted" data-parent="0.26">15:26:17.622 request:
+  <div class="preformatted" data-parent="0.26">09:15:23.891 request:
 1 &gt; POST http://localhost:8080/api/cars/getCarDetails
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 14
@@ -410,16 +410,16 @@
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;carId&quot;:1001}
 
-15:26:17.635 response time in milliseconds: 13
+09:15:23.929 response time in milliseconds: 37
 1 &lt; 200
 1 &lt; X-Powered-By: Express
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Content-Length: 184
-1 &lt; ETag: W/&quot;b8-41/mILlImoHx3HdTQlxFEk6vuqM&quot;
-1 &lt; Date: Fri, 28 Jan 2022 14:26:17 GMT
+1 &lt; ETag: W/&quot;b8-dPfAYYP3773vb0J4jlyXSvHsWu4&quot;
+1 &lt; Date: Fri, 11 Feb 2022 08:15:23 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
-[{&quot;_id&quot;:&quot;61f3fd09904c31085c523c0f&quot;,&quot;dealerCity&quot;:&quot;Izaiahfort&quot;,&quot;carModel&quot;:&quot;AUDI A1&quot;,&quot;releaseDate&quot;:&quot;2022-01-28T08:45:36.248Z&quot;,&quot;carId&quot;:1001,&quot;transmissionType&quot;:&quot;Automatic&quot;,&quot;inStock&quot;:false}]
+[{&quot;_id&quot;:&quot;62061b1bb90eec8350304898&quot;,&quot;dealerCity&quot;:&quot;Izaiahfort&quot;,&quot;carModel&quot;:&quot;AUDI A1&quot;,&quot;releaseDate&quot;:&quot;2022-01-28T08:45:36.248Z&quot;,&quot;carId&quot;:1001,&quot;transmissionType&quot;:&quot;Automatic&quot;,&quot;inStock&quot;:false}]
 
 </div>   
 
@@ -468,7 +468,7 @@
         <span>And</span>&nbsp;<span>match each $ contains {&quot;inStock&quot; : false}</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -548,7 +548,7 @@
         <span>Given</span>&nbsp;<span>url &#39;http://localhost:8080/api/cars/updateInStock&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -604,7 +604,7 @@
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">17</div>
+    <div class="time-cell passed">16</div>
   </div>
 
    
@@ -613,7 +613,7 @@
 
   
 
-  <div class="preformatted" data-parent="0.33">15:26:17.646 request:
+  <div class="preformatted" data-parent="0.33">09:15:23.938 request:
 1 &gt; POST http://localhost:8080/api/cars/updateInStock
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 29
@@ -623,13 +623,13 @@
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;carId&quot;:1001,&quot;inStock&quot;:true}
 
-15:26:17.661 response time in milliseconds: 14
+09:15:23.952 response time in milliseconds: 13
 1 &lt; 200
 1 &lt; X-Powered-By: Express
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Content-Length: 57
 1 &lt; ETag: W/&quot;39-Q3ZDKpBIn8ELTEk51d4h046SNsg&quot;
-1 &lt; Date: Fri, 28 Jan 2022 14:26:17 GMT
+1 &lt; Date: Fri, 11 Feb 2022 08:15:23 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
 {&quot;message&quot;:&quot;DOCUMENT UPDATED AND INSERTED IN PARKINGLOT&quot;}
@@ -710,7 +710,7 @@
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>11</span>
+              <span>ms:</span>&nbsp;<span>7</span>
             </div>
           </div>
           <div class="step-row">
@@ -817,7 +817,7 @@
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">9</div>
+    <div class="time-cell passed">6</div>
   </div>
 
    
@@ -826,7 +826,7 @@
 
   
 
-  <div class="preformatted" data-parent="0.40">15:26:17.672 request:
+  <div class="preformatted" data-parent="0.40">09:15:23.959 request:
 1 &gt; POST http://localhost:8080/api/cars/getCarDetails
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 14
@@ -836,16 +836,16 @@
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;carId&quot;:1001}
 
-15:26:17.678 response time in milliseconds: 6
+09:15:23.964 response time in milliseconds: 4
 1 &lt; 200
 1 &lt; X-Powered-By: Express
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Content-Length: 183
-1 &lt; ETag: W/&quot;b7-+va2XKgknkQFP+lNqklcivWkG38&quot;
-1 &lt; Date: Fri, 28 Jan 2022 14:26:17 GMT
+1 &lt; ETag: W/&quot;b7-W/c/pCdWiNyaMsSW1zZhccCBTUk&quot;
+1 &lt; Date: Fri, 11 Feb 2022 08:15:23 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
-[{&quot;_id&quot;:&quot;61f3fd09904c31085c523c0f&quot;,&quot;dealerCity&quot;:&quot;Izaiahfort&quot;,&quot;carModel&quot;:&quot;AUDI A1&quot;,&quot;releaseDate&quot;:&quot;2022-01-28T08:45:36.248Z&quot;,&quot;carId&quot;:1001,&quot;transmissionType&quot;:&quot;Automatic&quot;,&quot;inStock&quot;:true}]
+[{&quot;_id&quot;:&quot;62061b1bb90eec8350304898&quot;,&quot;dealerCity&quot;:&quot;Izaiahfort&quot;,&quot;carModel&quot;:&quot;AUDI A1&quot;,&quot;releaseDate&quot;:&quot;2022-01-28T08:45:36.248Z&quot;,&quot;carId&quot;:1001,&quot;transmissionType&quot;:&quot;Automatic&quot;,&quot;inStock&quot;:true}]
 
 </div>   
 
@@ -894,7 +894,7 @@
         <span>And</span>&nbsp;<span>match each $ contains {&quot;inStock&quot; : true}</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    

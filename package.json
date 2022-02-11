@@ -19,8 +19,7 @@
     "mongoose": "^5.11.15"
   },
   "scripts": {
-    "globalstg": "node index.js globalstg",
-    "o2ukprod": "node index.js o2ukprod",
-    "ncsaprod": "node index.js ncsaprod"
+    "test" : "karate test/",
+    "start" :"node index.js local"
   }
 }

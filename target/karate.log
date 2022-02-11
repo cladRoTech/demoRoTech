@@ -2794,3 +2794,474 @@ test/updateInStock.feature:41
 [{"_id":"61f3fd09904c31085c523c0f","dealerCity":"Izaiahfort","carModel":"AUDI A1","releaseDate":"2022-01-28T08:45:36.248Z","carId":1001,"transmissionType":"Automatic","inStock":true}]
 
 15:26:18.619 [main]  INFO  com.intuit.karate.Suite - <<pass>> feature 1 of 1 (0 remaining) test/updateInStock.feature
+22:34:08.314 [main]  INFO  com.intuit.karate - Karate version: 1.2.0.RC3
+22:34:08.593 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target/karate-reports' dir to: target/karate-reports_1643837648593
+22:34:10.326 [main]  DEBUG com.intuit.karate - request:
+1 > POST http://localhost:8080/api/cars/addNewCar
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 149
+1 > Host: localhost:8080
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.13 (Java/11.0.11)
+1 > Accept-Encoding: gzip,deflate
+{"dealerCity":"Izaiahfort","carModel":"AUDI A1","releaseDate":"2022-01-28T08:45:36.248Z","carId":1001,"transmissionType":"Automatic","inStock":false}
+
+22:34:10.383 [main]  ERROR com.intuit.karate - karate.org.apache.http.conn.HttpHostConnectException: Connect to localhost:8080 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused (Connection refused), http call failed after 291 milliseconds for url: http://localhost:8080/api/cars/addNewCar
+22:34:10.384 [main]  ERROR com.intuit.karate - test/updateInStock.feature:19
+When method POST
+http call failed after 291 milliseconds for url: http://localhost:8080/api/cars/addNewCar
+test/updateInStock.feature:19
+22:34:10.393 [main]  DEBUG com.intuit.karate - request:
+1 > POST http://localhost:8080/api/cars/getCarDetails
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 14
+1 > Host: localhost:8080
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.13 (Java/11.0.11)
+1 > Accept-Encoding: gzip,deflate
+{"carId":1001}
+
+22:34:10.394 [main]  ERROR com.intuit.karate - karate.org.apache.http.conn.HttpHostConnectException: Connect to localhost:8080 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused (Connection refused), http call failed after 2 milliseconds for url: http://localhost:8080/api/cars/getCarDetails
+22:34:10.394 [main]  ERROR com.intuit.karate - test/updateInStock.feature:26
+When method POST
+http call failed after 2 milliseconds for url: http://localhost:8080/api/cars/getCarDetails
+test/updateInStock.feature:26
+22:34:10.400 [main]  DEBUG com.intuit.karate - request:
+1 > POST http://localhost:8080/api/cars/updateInStock
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 29
+1 > Host: localhost:8080
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.13 (Java/11.0.11)
+1 > Accept-Encoding: gzip,deflate
+{"carId":1001,"inStock":true}
+
+22:34:10.401 [main]  ERROR com.intuit.karate - karate.org.apache.http.conn.HttpHostConnectException: Connect to localhost:8080 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused (Connection refused), http call failed after 1 milliseconds for url: http://localhost:8080/api/cars/updateInStock
+22:34:10.402 [main]  ERROR com.intuit.karate - test/updateInStock.feature:33
+When method POST
+http call failed after 1 milliseconds for url: http://localhost:8080/api/cars/updateInStock
+test/updateInStock.feature:33
+22:34:10.408 [main]  DEBUG com.intuit.karate - request:
+1 > POST http://localhost:8080/api/cars/getCarDetails
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 14
+1 > Host: localhost:8080
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.13 (Java/11.0.11)
+1 > Accept-Encoding: gzip,deflate
+{"carId":1001}
+
+22:34:10.409 [main]  ERROR com.intuit.karate - karate.org.apache.http.conn.HttpHostConnectException: Connect to localhost:8080 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused (Connection refused), http call failed after 2 milliseconds for url: http://localhost:8080/api/cars/getCarDetails
+22:34:10.410 [main]  ERROR com.intuit.karate - test/updateInStock.feature:40
+When method POST
+http call failed after 2 milliseconds for url: http://localhost:8080/api/cars/getCarDetails
+test/updateInStock.feature:40
+22:34:11.351 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 1 of 2 (0 remaining) test/updateInStock.feature
+22:34:11.358 [main]  DEBUG com.intuit.karate - request:
+1 > GET http://localhost:8080/api/cars/getAllCars
+1 > Host: localhost:8080
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.13 (Java/11.0.11)
+1 > Accept-Encoding: gzip,deflate
+
+
+22:34:11.360 [main]  ERROR com.intuit.karate - karate.org.apache.http.conn.HttpHostConnectException: Connect to localhost:8080 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused (Connection refused), http call failed after 3 milliseconds for url: http://localhost:8080/api/cars/getAllCars
+22:34:11.360 [main]  ERROR com.intuit.karate - test/get-cars.feature:4
+When method GET
+http call failed after 3 milliseconds for url: http://localhost:8080/api/cars/getAllCars
+test/get-cars.feature:4
+22:34:11.398 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 2 of 2 (0 remaining) test/get-cars.feature
+22:34:11.399 [main]  DEBUG com.intuit.karate.Suite - waiting for 2 features to complete
+22:35:09.047 [main]  INFO  com.intuit.karate - Karate version: 1.2.0.RC3
+22:35:09.313 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target/karate-reports' dir to: target/karate-reports_1643837709313
+22:35:11.115 [main]  DEBUG com.intuit.karate - request:
+1 > POST http://localhost:8080/api/cars/addNewCar
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 149
+1 > Host: localhost:8080
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.13 (Java/11.0.11)
+1 > Accept-Encoding: gzip,deflate
+{"dealerCity":"Izaiahfort","carModel":"AUDI A1","releaseDate":"2022-01-28T08:45:36.248Z","carId":1001,"transmissionType":"Automatic","inStock":false}
+
+22:35:11.156 [main]  ERROR com.intuit.karate - karate.org.apache.http.conn.HttpHostConnectException: Connect to localhost:8080 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused (Connection refused), http call failed after 284 milliseconds for url: http://localhost:8080/api/cars/addNewCar
+22:35:11.157 [main]  ERROR com.intuit.karate - test/updateInStock.feature:19
+When method POST
+http call failed after 284 milliseconds for url: http://localhost:8080/api/cars/addNewCar
+test/updateInStock.feature:19
+22:35:11.166 [main]  DEBUG com.intuit.karate - request:
+1 > POST http://localhost:8080/api/cars/getCarDetails
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 14
+1 > Host: localhost:8080
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.13 (Java/11.0.11)
+1 > Accept-Encoding: gzip,deflate
+{"carId":1001}
+
+22:35:11.167 [main]  ERROR com.intuit.karate - karate.org.apache.http.conn.HttpHostConnectException: Connect to localhost:8080 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused (Connection refused), http call failed after 2 milliseconds for url: http://localhost:8080/api/cars/getCarDetails
+22:35:11.168 [main]  ERROR com.intuit.karate - test/updateInStock.feature:26
+When method POST
+http call failed after 2 milliseconds for url: http://localhost:8080/api/cars/getCarDetails
+test/updateInStock.feature:26
+22:35:11.175 [main]  DEBUG com.intuit.karate - request:
+1 > POST http://localhost:8080/api/cars/updateInStock
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 29
+1 > Host: localhost:8080
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.13 (Java/11.0.11)
+1 > Accept-Encoding: gzip,deflate
+{"carId":1001,"inStock":true}
+
+22:35:11.176 [main]  ERROR com.intuit.karate - karate.org.apache.http.conn.HttpHostConnectException: Connect to localhost:8080 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused (Connection refused), http call failed after 2 milliseconds for url: http://localhost:8080/api/cars/updateInStock
+22:35:11.176 [main]  ERROR com.intuit.karate - test/updateInStock.feature:33
+When method POST
+http call failed after 2 milliseconds for url: http://localhost:8080/api/cars/updateInStock
+test/updateInStock.feature:33
+22:35:11.182 [main]  DEBUG com.intuit.karate - request:
+1 > POST http://localhost:8080/api/cars/getCarDetails
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 14
+1 > Host: localhost:8080
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.13 (Java/11.0.11)
+1 > Accept-Encoding: gzip,deflate
+{"carId":1001}
+
+22:35:11.183 [main]  ERROR com.intuit.karate - karate.org.apache.http.conn.HttpHostConnectException: Connect to localhost:8080 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused (Connection refused), http call failed after 2 milliseconds for url: http://localhost:8080/api/cars/getCarDetails
+22:35:11.183 [main]  ERROR com.intuit.karate - test/updateInStock.feature:40
+When method POST
+http call failed after 2 milliseconds for url: http://localhost:8080/api/cars/getCarDetails
+test/updateInStock.feature:40
+22:35:12.104 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 1 of 2 (0 remaining) test/updateInStock.feature
+22:35:12.110 [main]  DEBUG com.intuit.karate - request:
+1 > GET http://localhost:8080/api/cars/getAllCars
+1 > Host: localhost:8080
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.13 (Java/11.0.11)
+1 > Accept-Encoding: gzip,deflate
+
+
+22:35:12.111 [main]  ERROR com.intuit.karate - karate.org.apache.http.conn.HttpHostConnectException: Connect to localhost:8080 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused (Connection refused), http call failed after 2 milliseconds for url: http://localhost:8080/api/cars/getAllCars
+22:35:12.112 [main]  ERROR com.intuit.karate - test/get-cars.feature:4
+When method GET
+http call failed after 2 milliseconds for url: http://localhost:8080/api/cars/getAllCars
+test/get-cars.feature:4
+22:35:12.147 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 2 of 2 (0 remaining) test/get-cars.feature
+22:35:12.148 [main]  DEBUG com.intuit.karate.Suite - waiting for 2 features to complete
+11:56:58.047 [main]  INFO  com.intuit.karate - Karate version: 1.2.0.RC3
+11:56:58.319 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target/karate-reports' dir to: target/karate-reports_1644490618319
+11:57:00.223 [main]  DEBUG com.intuit.karate - request:
+1 > POST http://localhost:8080/api/cars/addNewCar
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 149
+1 > Host: localhost:8080
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.13 (Java/11.0.11)
+1 > Accept-Encoding: gzip,deflate
+{"dealerCity":"Izaiahfort","carModel":"AUDI A1","releaseDate":"2022-01-28T08:45:36.248Z","carId":1001,"transmissionType":"Automatic","inStock":false}
+
+11:57:00.312 [main]  DEBUG com.intuit.karate - response time in milliseconds: 87
+1 < 400
+1 < X-Powered-By: Express
+1 < Content-Type: application/json; charset=utf-8
+1 < Content-Length: 137
+1 < ETag: W/"89-RKkJ4Y9biE+Hcougurmfk9LQ5PA"
+1 < Date: Thu, 10 Feb 2022 10:57:00 GMT
+1 < Connection: keep-alive
+1 < Keep-Alive: timeout=5
+{"status":400,"content":{"message":"MongoError: E11000 duplicate key error collection: test.cars index: carId dup key: { carId: 1001 }"}}
+
+11:57:00.315 [main]  ERROR com.intuit.karate - test/updateInStock.feature:20
+Then status 200
+status code was: 400, expected: 200, response time in milliseconds: 87, url: http://localhost:8080/api/cars/addNewCar, response: 
+{"status":400,"content":{"message":"MongoError: E11000 duplicate key error collection: test.cars index: carId dup key: { carId: 1001 }"}}
+test/updateInStock.feature:20
+11:57:00.324 [main]  DEBUG com.intuit.karate - request:
+1 > POST http://localhost:8080/api/cars/getCarDetails
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 14
+1 > Host: localhost:8080
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.13 (Java/11.0.11)
+1 > Accept-Encoding: gzip,deflate
+{"carId":1001}
+
+11:57:00.330 [main]  DEBUG com.intuit.karate - response time in milliseconds: 5
+1 < 200
+1 < X-Powered-By: Express
+1 < Content-Type: application/json; charset=utf-8
+1 < Content-Length: 183
+1 < ETag: W/"b7-+va2XKgknkQFP+lNqklcivWkG38"
+1 < Date: Thu, 10 Feb 2022 10:57:00 GMT
+1 < Connection: keep-alive
+1 < Keep-Alive: timeout=5
+[{"_id":"61f3fd09904c31085c523c0f","dealerCity":"Izaiahfort","carModel":"AUDI A1","releaseDate":"2022-01-28T08:45:36.248Z","carId":1001,"transmissionType":"Automatic","inStock":true}]
+
+11:57:00.363 [main]  ERROR com.intuit.karate - test/updateInStock.feature:28
+And match each $ contains {"inStock" : false}
+match failed: EACH_CONTAINS
+  $ | match each failed at index 0 (LIST:MAP)
+  [{"_id":"61f3fd09904c31085c523c0f","dealerCity":"Izaiahfort","carModel":"AUDI A1","releaseDate":"2022-01-28T08:45:36.248Z","carId":1001,"transmissionType":"Automatic","inStock":true}]
+  {"inStock":false}
+
+    $[0] | actual does not contain expected | all key-values did not match, expected has un-matched keys - [inStock] (MAP:MAP)
+    {"_id":"61f3fd09904c31085c523c0f","dealerCity":"Izaiahfort","carModel":"AUDI A1","releaseDate":"2022-01-28T08:45:36.248Z","carId":1001,"transmissionType":"Automatic","inStock":true}
+    {"inStock":false}
+
+      $[0].inStock | not equal (BOOLEAN:BOOLEAN)
+      true
+      false
+
+test/updateInStock.feature:28
+11:57:00.371 [main]  DEBUG com.intuit.karate - request:
+1 > POST http://localhost:8080/api/cars/updateInStock
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 29
+1 > Host: localhost:8080
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.13 (Java/11.0.11)
+1 > Accept-Encoding: gzip,deflate
+{"carId":1001,"inStock":true}
+
+11:57:00.379 [main]  DEBUG com.intuit.karate - response time in milliseconds: 7
+1 < 200
+1 < X-Powered-By: Express
+1 < Content-Type: application/json; charset=utf-8
+1 < Content-Length: 57
+1 < ETag: W/"39-Q3ZDKpBIn8ELTEk51d4h046SNsg"
+1 < Date: Thu, 10 Feb 2022 10:57:00 GMT
+1 < Connection: keep-alive
+1 < Keep-Alive: timeout=5
+{"message":"DOCUMENT UPDATED AND INSERTED IN PARKINGLOT"}
+
+11:57:00.387 [main]  DEBUG com.intuit.karate - request:
+1 > POST http://localhost:8080/api/cars/getCarDetails
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 14
+1 > Host: localhost:8080
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.13 (Java/11.0.11)
+1 > Accept-Encoding: gzip,deflate
+{"carId":1001}
+
+11:57:00.396 [main]  DEBUG com.intuit.karate - response time in milliseconds: 8
+1 < 200
+1 < X-Powered-By: Express
+1 < Content-Type: application/json; charset=utf-8
+1 < Content-Length: 183
+1 < ETag: W/"b7-+va2XKgknkQFP+lNqklcivWkG38"
+1 < Date: Thu, 10 Feb 2022 10:57:00 GMT
+1 < Connection: keep-alive
+1 < Keep-Alive: timeout=5
+[{"_id":"61f3fd09904c31085c523c0f","dealerCity":"Izaiahfort","carModel":"AUDI A1","releaseDate":"2022-01-28T08:45:36.248Z","carId":1001,"transmissionType":"Automatic","inStock":true}]
+
+11:57:01.313 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 1 of 2 (0 remaining) test/updateInStock.feature
+11:57:01.321 [main]  DEBUG com.intuit.karate - request:
+1 > GET http://localhost:8080/api/cars/getAllCars
+1 > Host: localhost:8080
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.13 (Java/11.0.11)
+1 > Accept-Encoding: gzip,deflate
+
+
+11:57:01.326 [main]  DEBUG com.intuit.karate - response time in milliseconds: 5
+1 < 200
+1 < X-Powered-By: Express
+1 < Content-Type: application/json; charset=utf-8
+1 < Content-Length: 621
+1 < ETag: W/"26d-ZNGTOgzq8jkYLJVJyoAevRxfsn8"
+1 < Date: Thu, 10 Feb 2022 10:57:01 GMT
+1 < Connection: keep-alive
+1 < Keep-Alive: timeout=5
+{"status":"success","message":"All cars retrieved successfully","data":[{"_id":"61f3fc60c079270842cdca76","dealerCity":"Effertzfurt","carModel":"Pilot 2wd","releaseDate":"2012-11-03T17:07:01.000Z","carId":1000,"transmissionType":"Automatic","inStock":true},{"_id":"61f3fd09904c31085c523c0f","dealerCity":"Izaiahfort","carModel":"AUDI A1","releaseDate":"2022-01-28T08:45:36.248Z","carId":1001,"transmissionType":"Automatic","inStock":true},{"_id":"6204db8e1c28576ee5134d39","dealerCity":"Izaiahfort","carModel":"AUDI A1","releaseDate":"2022-02-10T09:31:58.493Z","carId":81,"transmissionType":"Automatic","inStock":false}]}
+
+11:57:01.376 [main]  INFO  com.intuit.karate.Suite - <<pass>> feature 2 of 2 (0 remaining) test/get-cars.feature
+11:57:01.377 [main]  DEBUG com.intuit.karate.Suite - waiting for 2 features to complete
+09:14:46.042 [main]  INFO  com.intuit.karate - Karate version: 1.2.0.RC3
+09:14:46.314 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target/karate-reports' dir to: target/karate-reports_1644567286314
+09:14:48.017 [main]  DEBUG com.intuit.karate - request:
+1 > POST http://localhost:8080/api/cars/addNewCar
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 149
+1 > Host: localhost:8080
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.13 (Java/11.0.11)
+1 > Accept-Encoding: gzip,deflate
+{"dealerCity":"Izaiahfort","carModel":"AUDI A1","releaseDate":"2022-01-28T08:45:36.248Z","carId":1001,"transmissionType":"Automatic","inStock":false}
+
+09:14:48.061 [main]  ERROR com.intuit.karate - karate.org.apache.http.conn.HttpHostConnectException: Connect to localhost:8080 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused (Connection refused), http call failed after 298 milliseconds for url: http://localhost:8080/api/cars/addNewCar
+09:14:48.062 [main]  ERROR com.intuit.karate - test/updateInStock.feature:19
+When method POST
+http call failed after 298 milliseconds for url: http://localhost:8080/api/cars/addNewCar
+test/updateInStock.feature:19
+09:14:48.073 [main]  DEBUG com.intuit.karate - request:
+1 > POST http://localhost:8080/api/cars/getCarDetails
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 14
+1 > Host: localhost:8080
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.13 (Java/11.0.11)
+1 > Accept-Encoding: gzip,deflate
+{"carId":1001}
+
+09:14:48.074 [main]  ERROR com.intuit.karate - karate.org.apache.http.conn.HttpHostConnectException: Connect to localhost:8080 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused (Connection refused), http call failed after 2 milliseconds for url: http://localhost:8080/api/cars/getCarDetails
+09:14:48.074 [main]  ERROR com.intuit.karate - test/updateInStock.feature:26
+When method POST
+http call failed after 2 milliseconds for url: http://localhost:8080/api/cars/getCarDetails
+test/updateInStock.feature:26
+09:14:48.081 [main]  DEBUG com.intuit.karate - request:
+1 > POST http://localhost:8080/api/cars/updateInStock
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 29
+1 > Host: localhost:8080
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.13 (Java/11.0.11)
+1 > Accept-Encoding: gzip,deflate
+{"carId":1001,"inStock":true}
+
+09:14:48.082 [main]  ERROR com.intuit.karate - karate.org.apache.http.conn.HttpHostConnectException: Connect to localhost:8080 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused (Connection refused), http call failed after 2 milliseconds for url: http://localhost:8080/api/cars/updateInStock
+09:14:48.082 [main]  ERROR com.intuit.karate - test/updateInStock.feature:33
+When method POST
+http call failed after 2 milliseconds for url: http://localhost:8080/api/cars/updateInStock
+test/updateInStock.feature:33
+09:14:48.088 [main]  DEBUG com.intuit.karate - request:
+1 > POST http://localhost:8080/api/cars/getCarDetails
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 14
+1 > Host: localhost:8080
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.13 (Java/11.0.11)
+1 > Accept-Encoding: gzip,deflate
+{"carId":1001}
+
+09:14:48.089 [main]  ERROR com.intuit.karate - karate.org.apache.http.conn.HttpHostConnectException: Connect to localhost:8080 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused (Connection refused), http call failed after 2 milliseconds for url: http://localhost:8080/api/cars/getCarDetails
+09:14:48.089 [main]  ERROR com.intuit.karate - test/updateInStock.feature:40
+When method POST
+http call failed after 2 milliseconds for url: http://localhost:8080/api/cars/getCarDetails
+test/updateInStock.feature:40
+09:14:48.999 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 1 of 2 (0 remaining) test/updateInStock.feature
+09:14:49.007 [main]  DEBUG com.intuit.karate - request:
+1 > GET http://localhost:8080/api/cars/getAllCars
+1 > Host: localhost:8080
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.13 (Java/11.0.11)
+1 > Accept-Encoding: gzip,deflate
+
+
+09:14:49.008 [main]  ERROR com.intuit.karate - karate.org.apache.http.conn.HttpHostConnectException: Connect to localhost:8080 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused (Connection refused), http call failed after 2 milliseconds for url: http://localhost:8080/api/cars/getAllCars
+09:14:49.009 [main]  ERROR com.intuit.karate - test/get-cars.feature:4
+When method GET
+http call failed after 2 milliseconds for url: http://localhost:8080/api/cars/getAllCars
+test/get-cars.feature:4
+09:14:49.056 [main]  INFO  com.intuit.karate.Suite - <<fail>> feature 2 of 2 (0 remaining) test/get-cars.feature
+09:14:49.057 [main]  DEBUG com.intuit.karate.Suite - waiting for 2 features to complete
+09:15:22.663 [main]  INFO  com.intuit.karate - Karate version: 1.2.0.RC3
+09:15:22.864 [main]  INFO  com.intuit.karate.Suite - backed up existing 'target/karate-reports' dir to: target/karate-reports_1644567322864
+09:15:23.780 [main]  DEBUG com.intuit.karate - request:
+1 > POST http://localhost:8080/api/cars/addNewCar
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 149
+1 > Host: localhost:8080
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.13 (Java/11.0.11)
+1 > Accept-Encoding: gzip,deflate
+{"dealerCity":"Izaiahfort","carModel":"AUDI A1","releaseDate":"2022-01-28T08:45:36.248Z","carId":1001,"transmissionType":"Automatic","inStock":false}
+
+09:15:23.860 [main]  DEBUG com.intuit.karate - response time in milliseconds: 78
+1 < 200
+1 < X-Powered-By: Express
+1 < Content-Type: application/json; charset=utf-8
+1 < Content-Length: 30
+1 < ETag: W/"1e-WcaHIX7ITaQofiXhwErGwpivfZs"
+1 < Date: Fri, 11 Feb 2022 08:15:23 GMT
+1 < Connection: keep-alive
+1 < Keep-Alive: timeout=5
+{"message":"DOCUMENT UPDATED"}
+
+09:15:23.891 [main]  DEBUG com.intuit.karate - request:
+1 > POST http://localhost:8080/api/cars/getCarDetails
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 14
+1 > Host: localhost:8080
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.13 (Java/11.0.11)
+1 > Accept-Encoding: gzip,deflate
+{"carId":1001}
+
+09:15:23.928 [main]  DEBUG com.intuit.karate - response time in milliseconds: 37
+1 < 200
+1 < X-Powered-By: Express
+1 < Content-Type: application/json; charset=utf-8
+1 < Content-Length: 184
+1 < ETag: W/"b8-dPfAYYP3773vb0J4jlyXSvHsWu4"
+1 < Date: Fri, 11 Feb 2022 08:15:23 GMT
+1 < Connection: keep-alive
+1 < Keep-Alive: timeout=5
+[{"_id":"62061b1bb90eec8350304898","dealerCity":"Izaiahfort","carModel":"AUDI A1","releaseDate":"2022-01-28T08:45:36.248Z","carId":1001,"transmissionType":"Automatic","inStock":false}]
+
+09:15:23.938 [main]  DEBUG com.intuit.karate - request:
+1 > POST http://localhost:8080/api/cars/updateInStock
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 29
+1 > Host: localhost:8080
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.13 (Java/11.0.11)
+1 > Accept-Encoding: gzip,deflate
+{"carId":1001,"inStock":true}
+
+09:15:23.951 [main]  DEBUG com.intuit.karate - response time in milliseconds: 13
+1 < 200
+1 < X-Powered-By: Express
+1 < Content-Type: application/json; charset=utf-8
+1 < Content-Length: 57
+1 < ETag: W/"39-Q3ZDKpBIn8ELTEk51d4h046SNsg"
+1 < Date: Fri, 11 Feb 2022 08:15:23 GMT
+1 < Connection: keep-alive
+1 < Keep-Alive: timeout=5
+{"message":"DOCUMENT UPDATED AND INSERTED IN PARKINGLOT"}
+
+09:15:23.959 [main]  DEBUG com.intuit.karate - request:
+1 > POST http://localhost:8080/api/cars/getCarDetails
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 14
+1 > Host: localhost:8080
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.13 (Java/11.0.11)
+1 > Accept-Encoding: gzip,deflate
+{"carId":1001}
+
+09:15:23.964 [main]  DEBUG com.intuit.karate - response time in milliseconds: 4
+1 < 200
+1 < X-Powered-By: Express
+1 < Content-Type: application/json; charset=utf-8
+1 < Content-Length: 183
+1 < ETag: W/"b7-W/c/pCdWiNyaMsSW1zZhccCBTUk"
+1 < Date: Fri, 11 Feb 2022 08:15:23 GMT
+1 < Connection: keep-alive
+1 < Keep-Alive: timeout=5
+[{"_id":"62061b1bb90eec8350304898","dealerCity":"Izaiahfort","carModel":"AUDI A1","releaseDate":"2022-01-28T08:45:36.248Z","carId":1001,"transmissionType":"Automatic","inStock":true}]
+
+09:15:24.601 [main]  INFO  com.intuit.karate.Suite - <<pass>> feature 1 of 2 (0 remaining) test/updateInStock.feature
+09:15:24.606 [main]  DEBUG com.intuit.karate - request:
+1 > GET http://localhost:8080/api/cars/getAllCars
+1 > Host: localhost:8080
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.13 (Java/11.0.11)
+1 > Accept-Encoding: gzip,deflate
+
+
+09:15:24.612 [main]  DEBUG com.intuit.karate - response time in milliseconds: 5
+1 < 200
+1 < X-Powered-By: Express
+1 < Content-Type: application/json; charset=utf-8
+1 < Content-Length: 434
+1 < ETag: W/"1b2-3jvQ65iXG5FNIQ62QkujRSog4A0"
+1 < Date: Fri, 11 Feb 2022 08:15:24 GMT
+1 < Connection: keep-alive
+1 < Keep-Alive: timeout=5
+{"status":"success","message":"All cars retrieved successfully","data":[{"_id":"62061aefc07927833504ad5e","carModel":"Ls 430","releaseDate":"2011-08-04T02:57:33.000Z","carId":1000,"transmissionType":"Manual","inStock":true,"dealerCity":"Sawaynhaven"},{"_id":"62061b1bb90eec8350304898","dealerCity":"Izaiahfort","carModel":"AUDI A1","releaseDate":"2022-01-28T08:45:36.248Z","carId":1001,"transmissionType":"Automatic","inStock":true}]}
+
+09:15:24.655 [main]  INFO  com.intuit.karate.Suite - <<pass>> feature 2 of 2 (0 remaining) test/get-cars.feature
+09:15:24.656 [main]  DEBUG com.intuit.karate.Suite - waiting for 2 features to complete
