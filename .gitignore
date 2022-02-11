@@ -2,6 +2,7 @@
 node_modules/
 **.DS_Store
 # Ignore Logs
+/target
 /target/karate-reports.*
 /target/karate-reports
 /target/karate.log
