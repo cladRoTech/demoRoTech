@@ -22,23 +22,23 @@
       <img src="karate-logo.svg" alt="Karate"/>
     </a>
     <div class="nav-count">
-      <div id="nav-pass" class="bg-success">4</div>
-      <div id="nav-fail" class="bg-danger">0</div>
+      <div id="nav-pass" class="bg-success">2</div>
+      <div id="nav-fail" class="bg-danger">2</div>
     </div>
   </div>
   <div id="nav-type">
     <div>Scenarios</div>
   </div>         
   <div id="nav-date">
-    <div>2022-02-11 09:15:23 AM</div>
+    <div>2022-02-11 09:28:55 AM</div>
   </div>        
 </div>
 
         <div class="nav-container">
-          <div class="nav-item passed">
+          <div class="nav-item failed">
             <a href="#[1:16]"><span>[1:16]</span> <span>Create a new &quot;car&quot; Document in the DB with inStock false</span></a>
           </div>
-          <div class="nav-item passed">
+          <div class="nav-item failed">
             <a href="#[2:23]"><span>[2:23]</span> <span>Get Car by carId and assert is not in stock</span></a>
           </div>
           <div class="nav-item passed">
@@ -70,8 +70,8 @@
                 <span></span>
               </div>
             </div>
-            <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>439</span>
+            <div class="scenario-time failed">
+              <span>ms:</span>&nbsp;<span>406</span>
             </div>
           </div>
           <div class="step-row">
@@ -150,7 +150,7 @@
         <span>And</span>&nbsp;<span>request {&quot;dealerCity&quot;: &quot;Izaiahfort&quot;,&quot;carModel&quot;: &quot;AUDI A1&quot;,&quot;releaseDate&quot;: &quot;2022-01-28T08:45:36.248Z&quot;,&quot;carId&quot;: &#39;#(carId)&#39;,&quot;transmissionType&quot;: &quot;Automatic&quot;,&quot;inStock&quot;: false}</span>
       </div>
     </div>
-    <div class="time-cell passed">38</div>
+    <div class="time-cell passed">39</div>
   </div>
 
    
@@ -178,7 +178,7 @@
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">320</div>
+    <div class="time-cell passed">307</div>
   </div>
 
    
@@ -187,7 +187,7 @@
 
   
 
-  <div class="preformatted" data-parent="0.19">09:15:23.780 request:
+  <div class="preformatted" data-parent="0.19">09:28:55.114 request:
 1 &gt; POST http://localhost:8080/api/cars/addNewCar
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 149
@@ -197,16 +197,16 @@
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;dealerCity&quot;:&quot;Izaiahfort&quot;,&quot;carModel&quot;:&quot;AUDI A1&quot;,&quot;releaseDate&quot;:&quot;2022-01-28T08:45:36.248Z&quot;,&quot;carId&quot;:1001,&quot;transmissionType&quot;:&quot;Automatic&quot;,&quot;inStock&quot;:false}
 
-09:15:23.860 response time in milliseconds: 78
-1 &lt; 200
+09:28:55.160 response time in milliseconds: 45
+1 &lt; 400
 1 &lt; X-Powered-By: Express
 1 &lt; Content-Type: application/json; charset=utf-8
-1 &lt; Content-Length: 30
-1 &lt; ETag: W/&quot;1e-WcaHIX7ITaQofiXhwErGwpivfZs&quot;
-1 &lt; Date: Fri, 11 Feb 2022 08:15:23 GMT
+1 &lt; Content-Length: 137
+1 &lt; ETag: W/&quot;89-RKkJ4Y9biE+Hcougurmfk9LQ5PA&quot;
+1 &lt; Date: Fri, 11 Feb 2022 08:28:55 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
-{&quot;message&quot;:&quot;DOCUMENT UPDATED&quot;}
+{&quot;status&quot;:400,&quot;content&quot;:{&quot;message&quot;:&quot;MongoError: E11000 duplicate key error collection: test.cars index: carId dup key: { carId: 1001 }&quot;}}
 
 </div>   
 
@@ -221,13 +221,13 @@
 
   <div class="step-row">
     <div class="step-container" id="0.20">
-      <div class="step-ref passed">20</div>
+      <div class="step-ref failed">20</div>
       
-      <div class="step-cell passed">
+      <div class="step-cell failed">
         <span>Then</span>&nbsp;<span>status 200</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell failed">0</div>
   </div>
 
    
@@ -236,7 +236,12 @@
 
   
 
-     
+  <div class="preformatted" data-parent="0.20">09:28:55.162 test/updateInStock.feature:20
+Then status 200
+status code was: 400, expected: 200, response time in milliseconds: 45, url: http://localhost:8080/api/cars/addNewCar, response: 
+{&quot;status&quot;:400,&quot;content&quot;:{&quot;message&quot;:&quot;MongoError: E11000 duplicate key error collection: test.cars index: carId dup key: { carId: 1001 }&quot;}}
+test/updateInStock.feature:20
+</div>   
 
   
 
@@ -249,13 +254,13 @@
 
   <div class="step-row">
     <div class="step-container" id="0.21">
-      <div class="step-ref passed">21</div>
+      <div class="step-ref skipped">21</div>
       
-      <div class="step-cell passed">
+      <div class="step-cell skipped">
         <span>And</span>&nbsp;<span>match $ contains {&quot;message&quot; : &quot;DOCUMENT UPDATED&quot;}</span>
       </div>
     </div>
-    <div class="time-cell passed">21</div>
+    <div class="time-cell skipped">0</div>
   </div>
 
    
@@ -283,8 +288,8 @@
                 <span></span>
               </div>
             </div>
-            <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>42</span>
+            <div class="scenario-time failed">
+              <span>ms:</span>&nbsp;<span>30</span>
             </div>
           </div>
           <div class="step-row">
@@ -335,7 +340,7 @@
         <span>Given</span>&nbsp;<span>url &#39;http://localhost:8080/api/cars/getCarDetails&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -391,7 +396,7 @@
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">40</div>
+    <div class="time-cell passed">8</div>
   </div>
 
    
@@ -400,7 +405,7 @@
 
   
 
-  <div class="preformatted" data-parent="0.26">09:15:23.891 request:
+  <div class="preformatted" data-parent="0.26">09:28:55.175 request:
 1 &gt; POST http://localhost:8080/api/cars/getCarDetails
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 14
@@ -410,16 +415,16 @@
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;carId&quot;:1001}
 
-09:15:23.929 response time in milliseconds: 37
+09:28:55.180 response time in milliseconds: 4
 1 &lt; 200
 1 &lt; X-Powered-By: Express
 1 &lt; Content-Type: application/json; charset=utf-8
-1 &lt; Content-Length: 184
-1 &lt; ETag: W/&quot;b8-dPfAYYP3773vb0J4jlyXSvHsWu4&quot;
-1 &lt; Date: Fri, 11 Feb 2022 08:15:23 GMT
+1 &lt; Content-Length: 183
+1 &lt; ETag: W/&quot;b7-W/c/pCdWiNyaMsSW1zZhccCBTUk&quot;
+1 &lt; Date: Fri, 11 Feb 2022 08:28:55 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
-[{&quot;_id&quot;:&quot;62061b1bb90eec8350304898&quot;,&quot;dealerCity&quot;:&quot;Izaiahfort&quot;,&quot;carModel&quot;:&quot;AUDI A1&quot;,&quot;releaseDate&quot;:&quot;2022-01-28T08:45:36.248Z&quot;,&quot;carId&quot;:1001,&quot;transmissionType&quot;:&quot;Automatic&quot;,&quot;inStock&quot;:false}]
+[{&quot;_id&quot;:&quot;62061b1bb90eec8350304898&quot;,&quot;dealerCity&quot;:&quot;Izaiahfort&quot;,&quot;carModel&quot;:&quot;AUDI A1&quot;,&quot;releaseDate&quot;:&quot;2022-01-28T08:45:36.248Z&quot;,&quot;carId&quot;:1001,&quot;transmissionType&quot;:&quot;Automatic&quot;,&quot;inStock&quot;:true}]
 
 </div>   
 
@@ -462,13 +467,13 @@
 
   <div class="step-row">
     <div class="step-container" id="0.28">
-      <div class="step-ref passed">28</div>
+      <div class="step-ref failed">28</div>
       
-      <div class="step-cell passed">
+      <div class="step-cell failed">
         <span>And</span>&nbsp;<span>match each $ contains {&quot;inStock&quot; : false}</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell failed">19</div>
   </div>
 
    
@@ -477,7 +482,23 @@
 
   
 
-     
+  <div class="preformatted" data-parent="0.28">09:28:55.201 test/updateInStock.feature:28
+And match each $ contains {&quot;inStock&quot; : false}
+match failed: EACH_CONTAINS
+  $ | match each failed at index 0 (LIST:MAP)
+  [{&quot;_id&quot;:&quot;62061b1bb90eec8350304898&quot;,&quot;dealerCity&quot;:&quot;Izaiahfort&quot;,&quot;carModel&quot;:&quot;AUDI A1&quot;,&quot;releaseDate&quot;:&quot;2022-01-28T08:45:36.248Z&quot;,&quot;carId&quot;:1001,&quot;transmissionType&quot;:&quot;Automatic&quot;,&quot;inStock&quot;:true}]
+  {&quot;inStock&quot;:false}
+
+    $[0] | actual does not contain expected | all key-values did not match, expected has un-matched keys - [inStock] (MAP:MAP)
+    {&quot;_id&quot;:&quot;62061b1bb90eec8350304898&quot;,&quot;dealerCity&quot;:&quot;Izaiahfort&quot;,&quot;carModel&quot;:&quot;AUDI A1&quot;,&quot;releaseDate&quot;:&quot;2022-01-28T08:45:36.248Z&quot;,&quot;carId&quot;:1001,&quot;transmissionType&quot;:&quot;Automatic&quot;,&quot;inStock&quot;:true}
+    {&quot;inStock&quot;:false}
+
+      $[0].inStock | not equal (BOOLEAN:BOOLEAN)
+      true
+      false
+
+test/updateInStock.feature:28
+</div>   
 
   
 
@@ -497,7 +518,7 @@
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>18</span>
+              <span>ms:</span>&nbsp;<span>8</span>
             </div>
           </div>
           <div class="step-row">
@@ -604,7 +625,7 @@
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">16</div>
+    <div class="time-cell passed">7</div>
   </div>
 
    
@@ -613,7 +634,7 @@
 
   
 
-  <div class="preformatted" data-parent="0.33">09:15:23.938 request:
+  <div class="preformatted" data-parent="0.33">09:28:55.209 request:
 1 &gt; POST http://localhost:8080/api/cars/updateInStock
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 29
@@ -623,13 +644,13 @@
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;carId&quot;:1001,&quot;inStock&quot;:true}
 
-09:15:23.952 response time in milliseconds: 13
+09:28:55.214 response time in milliseconds: 4
 1 &lt; 200
 1 &lt; X-Powered-By: Express
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Content-Length: 57
 1 &lt; ETag: W/&quot;39-Q3ZDKpBIn8ELTEk51d4h046SNsg&quot;
-1 &lt; Date: Fri, 11 Feb 2022 08:15:23 GMT
+1 &lt; Date: Fri, 11 Feb 2022 08:28:55 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
 {&quot;message&quot;:&quot;DOCUMENT UPDATED AND INSERTED IN PARKINGLOT&quot;}
@@ -710,7 +731,7 @@
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>7</span>
+              <span>ms:</span>&nbsp;<span>8</span>
             </div>
           </div>
           <div class="step-row">
@@ -817,7 +838,7 @@
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">6</div>
+    <div class="time-cell passed">7</div>
   </div>
 
    
@@ -826,7 +847,7 @@
 
   
 
-  <div class="preformatted" data-parent="0.40">09:15:23.959 request:
+  <div class="preformatted" data-parent="0.40">09:28:55.223 request:
 1 &gt; POST http://localhost:8080/api/cars/getCarDetails
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 14
@@ -836,13 +857,13 @@
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;carId&quot;:1001}
 
-09:15:23.964 response time in milliseconds: 4
+09:28:55.228 response time in milliseconds: 4
 1 &lt; 200
 1 &lt; X-Powered-By: Express
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Content-Length: 183
 1 &lt; ETag: W/&quot;b7-W/c/pCdWiNyaMsSW1zZhccCBTUk&quot;
-1 &lt; Date: Fri, 11 Feb 2022 08:15:23 GMT
+1 &lt; Date: Fri, 11 Feb 2022 08:28:55 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
 [{&quot;_id&quot;:&quot;62061b1bb90eec8350304898&quot;,&quot;dealerCity&quot;:&quot;Izaiahfort&quot;,&quot;carModel&quot;:&quot;AUDI A1&quot;,&quot;releaseDate&quot;:&quot;2022-01-28T08:45:36.248Z&quot;,&quot;carId&quot;:1001,&quot;transmissionType&quot;:&quot;Automatic&quot;,&quot;inStock&quot;:true}]
@@ -894,7 +915,7 @@
         <span>And</span>&nbsp;<span>match each $ contains {&quot;inStock&quot; : true}</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    

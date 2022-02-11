@@ -3,6 +3,7 @@ node_modules/
 **.DS_Store
 # Ignore Logs
 target/
+/target
 
 # Ignore the build directory
 ngrok
