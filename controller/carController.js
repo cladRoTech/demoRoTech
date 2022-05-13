@@ -2,7 +2,6 @@
 // Import contact model
 const { body, validationResult } = require('express-validator');
 const Chance =  require ('chance');
-const { extract_renew_next } = require('../../amf-emea-automation/blocks');
 const chance = new Chance();
 Car = require('../models/carModel');
 Park = require('../models/parkingModel')
